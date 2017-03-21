@@ -66,7 +66,7 @@ namespace cs430WebApplication
             using (conn)
             {
                 conn.Open();
-                Response.Write("connected");
+                Response.Write("Connected");
             }
 
         }
