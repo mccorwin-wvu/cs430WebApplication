@@ -61,6 +61,7 @@ dfn {
 }
 h1 {
   margin: .67em 0;
+  color: #ffd800;
   font-size: 2em;
 }
 mark {
@@ -247,6 +248,7 @@ th {
   }
   .label {
     border: 1px solid #000;
+    color: #ffd800;
   }
   .table {
     border-collapse: collapse !important;
@@ -1617,6 +1619,10 @@ pre code {
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
+    top: 52px;
+    left: 30px;
+    height: 83px;
+    width: 182px;
 }
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left;

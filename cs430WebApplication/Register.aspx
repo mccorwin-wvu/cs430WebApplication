@@ -71,12 +71,13 @@
                          function checkFilledFn() {
                              var inputVal = document.getElementById("firstName");
                              if (inputVal.value == "") {
-                                 inputVal.style.backgroundColor = "red";
+                                 inputVal.style.border = "thick solid red";
+
                                  noErrfn = false;
                                 
                              }
                              else {
-                                 inputVal.style.backgroundColor = "green";
+                                 inputVal.style.border = "thick solid green";
                                 
                                  noErrfn = true;
                       
@@ -86,12 +87,12 @@
                          function checkFilledLn() {
                              var inputVal = document.getElementById("lastName");
                              if (inputVal.value == "") {
-                                 inputVal.style.backgroundColor = "red";
+                                 inputVal.style.border = "thick solid red";
                                 
                                  noErrln = false;
                              }
                              else {
-                                 inputVal.style.backgroundColor = "green";
+                                 inputVal.style.border = "thick solid green";
                                  
                                  noErrln = true;
                              }
@@ -101,12 +102,12 @@
                          function checkFilledEmail() {
                              var inputVal = document.getElementById("email");
                              if (inputVal.value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/g) == null) {
-                                 inputVal.style.backgroundColor = "red";
+                                 inputVal.style.border = "thick solid red";
                                  
                                  noErrem = false;
                              }
                              else {
-                                 inputVal.style.backgroundColor = "green";
+                                 inputVal.style.border = "thick solid green";
 
                                 
                                  noErrem = true;
@@ -121,14 +122,14 @@
                             
                              if (inputVal1.value.localeCompare(inputVal2.value) != 0 || inputVal1.value.length < 6) {
 
-                                 inputVal1.style.backgroundColor = "red";
-                                 inputVal2.style.backgroundColor = "red";
+                                 inputVal1.style.border = "thick solid red";
+                                 inputVal2.style.border = "thick solid red";
                                  
                                  noErrps = false;
                              }
                              else {
-                                 inputVal1.style.backgroundColor = "green";
-                                 inputVal2.style.backgroundColor = "green";
+                                 inputVal1.style.border = "thick solid green";
+                                 inputVal2.style.border = "thick solid green";
                                  
                                  noErrps = true;
                              }
@@ -154,7 +155,7 @@
 
     <div class="container">
         <form class="form-horizontal" role="form" runat="server">
-            <h2 class="text-center">Registration Form</h2>
+            <h2 class="text-center" style="color: #ffed00">Registration Form</h2>
 
             <div class="form-group">
                 <label for="firstName" class="col-sm-3 control-label">First Name</label>

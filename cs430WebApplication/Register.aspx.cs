@@ -42,13 +42,7 @@ namespace cs430WebApplication
 
         }
 
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-
+        
 
         public void serverCheck()
 
@@ -110,61 +104,7 @@ namespace cs430WebApplication
 
         }
 
-        public bool IsLogin(string email, string pass)
-        {
-
-
-
-            string query = $"SELECT * users FROM useres WHERE email= '{email}' AND password= '{pass}';";
-
-
-            try
-            {
-                if (OpenConnection())
-                {
-
-                    MySqlCommand cmd = new MySqlCommand(query, conn);
-                    MySqlDataReader reader = cmd.ExecuteReader();
-
-                    if (reader.Read())
-                    {
-                        reader.Close();
-                        conn.Close();
-                        return true;
-
-                    }
-                    else
-                    {
-                        reader.Close();
-                        conn.Close();
-                        return false;
-                    }
-                }
-                else
-                {
-                    conn.Close();
-                    return false;
-                }
-            }
-
-            catch(Exception ex) {
-
-
-                conn.Close();
-                return false;
-
-            }
-
-
-
-
-
-
-
-        }
-
-
-
+        
 
 
         private bool OpenConnection()
@@ -192,6 +132,6 @@ namespace cs430WebApplication
             }
         }
 
-        
+       
     }
 }
