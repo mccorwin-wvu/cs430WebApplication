@@ -8,46 +8,123 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
     <title></title>
 
-    
+
     <style>
-        h2 {
-            margin-bottom: 65px;
+         h1#loginText {
+            color: gold;
+            padding: 0px,0,0px,0;
+            font-size: 70px;
+            text-align: center;
         }
+
+         img#titleImg {
+            width: 120px;
+            height: 120px;
+        }
+
+        header {
+            width: auto;
+            height: 150px;
+        }
+        
+        div {
+            
+            align-content:center;
+            padding: 20px,20px,20px,20px;
+            margin-bottom: 25px;
+            margin-top: 25px;
+            
+        }
+        form {
+           
+            align-content: center;
+            text-align: center;
+            margin-bottom: 25px;
+            margin-top: 25px;
+        }
+
+        .inputs {
+            display:block;
+          
+            animation:ease-in;
+            border-style:double;
+            text-shadow: 2px 2px 20px #FAFA11;
+            border-color:gold;
+            font-size: 18px;
+            margin:auto;
+        }
+      
 
         body {
             background-image: url(http://wallpapercave.com/wp/0gjtD62.jpg);
         }
 
         label {
+            display:block;
             color: #ffd800;
         }
 
+        
+
         .live-search-list {
+            
             -webkit-box-sizing: border-box;
             -moz-box-sizing: border-box;
             box-sizing: border-box;
-            padding: 1em;
-            background-color: #2c3e50;
+
+            display:block;
+          
+            animation:ease-in;
+            border-style:double;
+            text-shadow: 2px 2px 20px #FAFA11;
+            border-color:gold;
+            font-size: 18px;
+            margin:auto;
+           
+           
             -webkit-border-radius: 5px;
             -moz-border-radius: 5px;
             border-radius: 5px;
             font-family: 'Lato', sans-serif;
+            
+          
+            padding: 1em;
+            list-style-type: none;
+            background-color: black;
+            margin-left:350px;
+            margin-top: 0;
+            width:200px;
+            float:left;
+
+            position: absolute;
+            left: 100px;
+            top: 810px;
+
+            
             color: #fff;
         }
 
 
 
         .live-search-box {
-            width: 100%;
-            display: block;
-            padding: 1em;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-            border: 1px solid #3498db;
-            -webkit-border-radius: 5px;
-            -moz-border-radius: 5px;
-            border-radius: 5px;
+            
+            display:block;
+            animation:ease-in;
+            border-style:double;
+            text-shadow: 2px 2px 20px #FAFA11;
+            border-color:gold;
+            font-size: 18px;
+            margin:auto;
+        }
+
+        .buttonLog {
+            width: 200px;
+            height: 45px;
+            font-size: medium;
+            color: blue;
+            background-color: gold;
+            border-color: blue;
+            
         }
 
         .live-search-list li {
@@ -56,156 +133,186 @@
             padding: 0;
             margin: 5px 0;
         }
+
     </style>
 </head>
 <body>
+    <header>
+
+        <h1 id="loginText" style="width: auto">
+
+
+
+            <img id="titleImg" src="http://img.scout.com/sites/default/files/west_virginia_mountaineers.png" />Register </h1>
+
+
+
+    </header>
+
     <script>
 
-      
+
 
         var noErrfn = true;
         var noErrln = true;
         var noErrem = true;
         var noErrps = true;
 
-                         function checkFilledFn() {
-                             var inputVal = document.getElementById("firstName");
-                             if (inputVal.value == "") {
-                                 inputVal.style.border = "thick solid red";
+        function checkFilledFn() {
+            var inputVal = document.getElementById("firstName");
+            if (inputVal.value == "") {
+                inputVal.style.border = "thick solid red";
 
-                                 noErrfn = false;
-                                
-                             }
-                             else {
-                                 inputVal.style.border = "thick solid green";
-                                
-                                 noErrfn = true;
-                      
-                             }
-                         }
+                noErrfn = false;
 
-                         function checkFilledLn() {
-                             var inputVal = document.getElementById("lastName");
-                             if (inputVal.value == "") {
-                                 inputVal.style.border = "thick solid red";
-                                
-                                 noErrln = false;
-                             }
-                             else {
-                                 inputVal.style.border = "thick solid green";
-                                 
-                                 noErrln = true;
-                             }
-                         }
+            }
+            else {
+                inputVal.style.border = "thick solid green";
 
+                noErrfn = true;
 
-                         function checkFilledEmail() {
-                             var inputVal = document.getElementById("email");
-                             if (inputVal.value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/g) == null) {
-                                 inputVal.style.border = "thick solid red";
-                                 
-                                 noErrem = false;
-                             }
-                             else {
-                                 inputVal.style.border = "thick solid green";
+            }
+        }
 
-                                
-                                 noErrem = true;
-                             }
-                         }
+        function checkFilledLn() {
+            var inputVal = document.getElementById("lastName");
+            if (inputVal.value == "") {
+                inputVal.style.border = "thick solid red";
+
+                noErrln = false;
+            }
+            else {
+                inputVal.style.border = "thick solid green";
+
+                noErrln = true;
+            }
+        }
 
 
-                         function checkFilledPass() {
-                             var inputVal1 = document.getElementById("password");
-                             var inputVal2 = document.getElementById("confirmPassword");
+        function checkFilledEmail() {
+            var inputVal = document.getElementById("email");
+            if (inputVal.value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/g) == null) {
+                inputVal.style.border = "thick solid red";
 
-                            
-                             if (inputVal1.value.localeCompare(inputVal2.value) != 0 || inputVal1.value.length < 6) {
-
-                                 inputVal1.style.border = "thick solid red";
-                                 inputVal2.style.border = "thick solid red";
-                                 
-                                 noErrps = false;
-                             }
-                             else {
-                                 inputVal1.style.border = "thick solid green";
-                                 inputVal2.style.border = "thick solid green";
-                                 
-                                 noErrps = true;
-                             }
-                         }
-
-                         function buttonRdy() {
-                             if (noErrfn == true && noErrln == true && noErrem == true && noErrps == true) {
-                                 document.getElementById("submitButton").disabled = false;
-
-                             }
-                             else {
-                                 document.getElementById("submitButton").disabled = true;
-                             }
+                noErrem = false;
+            }
+            else {
+                inputVal.style.border = "thick solid green";
 
 
+                noErrem = true;
+            }
+        }
 
-                         }
 
-                         
-                       
+        function checkFilledPass() {
+            var inputVal1 = document.getElementById("password");
+            var inputVal2 = document.getElementById("confirmPassword");
 
-     </script>
 
-    <div class="container">
-        <form class="form-horizontal" role="form" runat="server">
-            <h2 class="text-center" style="color: #ffed00">Registration Form</h2>
+            if (inputVal1.value.localeCompare(inputVal2.value) != 0 || inputVal1.value.length < 6) {
 
-            <div class="form-group">
-                <label for="firstName" class="col-sm-3 control-label">First Name</label>
-                <div class="col-sm-9">
-                    <input type="text" id="firstName" placeholder="First Name"  onchange="checkFilledFn();" class="form-control" runat="server" autofocus>
-                   
-                    
-                     
+                inputVal1.style.border = "thick solid red";
+                inputVal2.style.border = "thick solid red";
 
-                </div>
+                noErrps = false;
+            }
+            else {
+                inputVal1.style.border = "thick solid green";
+                inputVal2.style.border = "thick solid green";
+
+                noErrps = true;
+            }
+        }
+
+        function buttonRdy() {
+            if (noErrfn == true && noErrln == true && noErrem == true && noErrps == true) {
+                document.getElementById("submitButton").disabled = false;
+
+            }
+            else {
+                document.getElementById("submitButton").disabled = true;
+            }
+
+
+
+        }
+
+
+
+
+    </script>
+
+    <form runat="server">
+
+            <div>
+                
+               <label for="firstName">First Name</label>
+               
+               <input type="text" id="firstName" placeholder="First Name" onchange="checkFilledFn();" class="inputs" runat="server" autofocus>
+                
             </div>
 
             <div class="form-group">
-                <label for="lastName" class="col-sm-3 control-label">Last Name</label>
-                <div class="col-sm-9">
-                    <input type="text" id="lastName" placeholder="Last Name" onchange="checkFilledLn(); buttonRdy();" class="form-control" runat="server" autofocus>
-                </div>
+                <label for="lastName">Last Name</label>
+                
+                    <input type="text" id="lastName" placeholder="Last Name" onchange="checkFilledLn(); buttonRdy();" class="inputs"  runat="server" autofocus>
+                
             </div>
 
-            <div class="form-group">
-                <label for="email" class="col-sm-3 control-label">Email</label>
-                <div class="col-sm-9">
-                    <input type="email" id="email" placeholder="Email" onchange="checkFilledEmail(); buttonRdy();" runat="server" class="form-control">
-                </div>
+            <div>
+                <label for="email" >Email</label>
+                
+                <input type="email" id="email" placeholder="Email" onchange="checkFilledEmail(); buttonRdy();" runat="server" class="inputs">
+                
             </div>
 
-            <div class="form-group">
-                <label for="password" class="col-sm-3 control-label">Password</label>
-                <div class="col-sm-9">
-                    <input type="password" id="password" placeholder="Password" onchange="checkFilledPass(); buttonRdy();" runat="server" class="form-control">
-                    <span class="help-block" style="color: #ffd800">Needs to be 6 characters long</span>
-                </div>
+            <div>
+                    <label for="password">Password</label>
+               
+                    <input type="password" id="password" placeholder="Password" onchange="checkFilledPass(); buttonRdy();" runat="server" class="inputs">
+                    <span class="help-block" style="color: gold">Needs to be 6 characters long</span>
+                
             </div>
 
-            <div class="form-group">
-                <label for="confirmPassword" class="col-sm-3 control-label">Confirm Password</label>
-                <div class="col-sm-9">
-                    <input type="password" id="confirmPassword" placeholder="Confirm Password" onchange="checkFilledPass(); buttonRdy();" runat="server" class="form-control">
-                     
-                </div>
+            <div>
+                <label for="confirmPassword">Confirm Password</label>
+               
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" onchange="checkFilledPass(); buttonRdy();" runat="server" class="inputs">
+                
             </div>
-           
-            <div class="form-group">
-                <label for="tagBox" class="col-sm-3 control-label">Tags</label>
 
-                <div class="col-sm-9">
+            
+
+
+            <div>
+                <label for="School">School</label>
+                
+                    <select id="School" class="inputs" runat="server">
+                        <option class="inputs">West Virginia University</option>
+
+                    </select>
+                
+            </div>
+
+
+
+
+
+             <div>
+
+                <label for="tagBox">Tags</label>
+               
+                 
                     <input type="text" id="tagBox" class="live-search-box" runat="server" placeholder="search here" />
-                    <span class="help-block" style="color: #ffd800">Enter Tags That interest you separated by commas, eg. Basketball,football,pizza</span>
+                    <span class="help-block" style="color: gold">Enter Tags That interest you separated by commas, eg. Basketball,football,pizza</span>
+                
+                  <asp:Button type="submit" ID="Button1" runat="server" OnClick="Submit_Click" Text="Register" class="buttonLog" />
 
-                    <ul class="live-search-list" id="tagList">
+                    
+
+                     
+                         <ul class="live-search-list" id="tagList">
                         <li>aardvark</li>
                         <li>abacus</li>
                         <li>abbey</li>
@@ -4609,7 +4716,10 @@
                         <li>zucchini</li>
 
                     </ul>
-
+                    
+                    
+                    
+                    
                     <script>
                         jQuery(document).ready(function ($) {
 
@@ -4620,12 +4730,16 @@
 
                             });
 
-                            if (tagBox.textContent.length == 0 || tagBox.textContent[tagBox.textContent.length - 1] == ',') {
+                            if (tagBox.textContent.length <= 3 || tagBox.textContent[tagBox.textContent.length - 1] == ',') {
 
                                 $('.live-search-list li').each(function () {
                                     $(this).hide();
 
                                 });
+                               
+                             
+
+                                
                             }
 
                             $('.live-search-box').on('keyup', function () {
@@ -4653,42 +4767,28 @@
 
                     </script>
 
-                </div>
+              
+
+
 
             </div>
-
-
-            <div class="form-group">
-                <label for="School" class="col-sm-3 control-label">School</label>
-                <div class="col-sm-9">
-                    <select id="School" class="form-control" runat="server">
-                        <option>West Virginia University</option>
-
-                    </select>
-                </div>
-            </div>
-
-
-            <div class="form-group">
-                <div class="col-sm-9 col-sm-offset-3">
-
-                     
-                     <asp:Button type="submit" ID="submitButton" runat="server" OnClick="Submit_Click" Text="Register" class ="btn btn-primary btn-block" />
-                      
-                   
-                </div>
-            </div>
-        </form>
-        <!-- /form -->
-   </div>
-    <!-- ./container -->
-
-
-
-
-
 
    
+
+
+        </form>
+
+
+            
+
+           
+
+       
+
+
+
+
+
 
 
 
@@ -4696,14 +4796,14 @@
 
 
 </body>
-    <script>
-        checkFilledFn();
-        checkFilledLn();
-        checkFilledEmail();
-        checkFilledPass();
-        buttonRdy();
+<script>
+    checkFilledFn();
+    checkFilledLn();
+    checkFilledEmail();
+    checkFilledPass();
+    buttonRdy();
 
-    </script>
+</script>
 
 
 </html>

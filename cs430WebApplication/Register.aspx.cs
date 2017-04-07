@@ -15,7 +15,7 @@ namespace cs430WebApplication
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            serverCheck();
+          
 
             
 
@@ -29,6 +29,7 @@ namespace cs430WebApplication
        private String database;
        private String uid;
        private String password;
+        private String port;
         private MySqlConnection conn;
 
         //Response.Write("button clicked");
@@ -36,8 +37,10 @@ namespace cs430WebApplication
         protected void Submit_Click(object sender, EventArgs e)
 
         {
+            serverCheck();
 
             Register(firstName.Value, lastName.Value, email.Value, confirmPassword.Value, tagBox.Value, School.Value);
+            conn.Close();
             Response.Redirect("Login.aspx");
 
         }
@@ -49,13 +52,14 @@ namespace cs430WebApplication
 
         {
 
-            server = "us-cdbr-azure-east2-d.cloudapp.net";
+            server = "db4free.net";
             database = "cs430dp";
-            uid = "bde01a074310a7";
-            password = "2316fdf1";
+            uid = "mccorwin";
+            password = "corwin445";
+            port = "3307";
 
             string connString;
-            connString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={password};";
+            connString = $"SERVER={server};PORT={port};DATABASE={database};UID={uid};PASSWORD={password};";
             conn = new MySqlConnection(connString);
             using (conn)
             {
@@ -69,7 +73,8 @@ namespace cs430WebApplication
 
         public bool Register(string firstName, string lastName, string email, string password, string tags, string school)
         {
-            string query = $"INSERT INTO users ( email, first_name, last_name, password, tags, school) VALUES ('{email}','{firstName}','{lastName}','{password}','{tags}','{school}');";
+            string query = $"INSERT INTO Users ( email, first_name, last_name, password, tags, school) VALUES ('{email}','{firstName}','{lastName}','{password}','{tags}','{school}');";
+
             Response.Write("registering");
 
             try
@@ -77,6 +82,7 @@ namespace cs430WebApplication
                 if (OpenConnection())
                 {
                     MySqlCommand cmd = new MySqlCommand(query,conn);
+
                     try
                     {
                         cmd.ExecuteNonQuery();
@@ -84,6 +90,7 @@ namespace cs430WebApplication
                     }
                     catch(Exception ex)
                     {
+                        conn.Close();
                         return false;
                     }
                 }

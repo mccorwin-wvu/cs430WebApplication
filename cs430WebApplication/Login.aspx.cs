@@ -12,7 +12,7 @@ namespace cs430WebApplication
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            serverCheck();
+           
 
         }
 
@@ -20,6 +20,7 @@ namespace cs430WebApplication
         private String database;
         private String uid;
         private String password;
+        private String port;
         private int user_id = 0;
         private String first_name = "";
         private String last_name = "";
@@ -27,14 +28,18 @@ namespace cs430WebApplication
         private String tags = "";
 
         private MySqlConnection conn;
-
-
-        protected void Submit_Click(object sender, EventArgs e)
+        protected void RegisterPage(object sender, EventArgs e)
         {
+            Response.Redirect("Register.aspx");
+
+        }
+
+        protected void LoginRequest(object sender, EventArgs e)
+        {
+            serverCheck();
 
 
-
-            if (IsLogin(em.Value, pass.Value))
+            if (IsLogin(loginEmail.Value, loginPassword.Value))
             {
 
 
@@ -44,7 +49,12 @@ namespace cs430WebApplication
                 Session["user_email"] = user_email;
                 Session["tags"] = tags;
 
+                conn.Close();
+
                 Server.Transfer("UserHomePage.aspx");
+
+
+
                 
 
 
@@ -93,7 +103,7 @@ namespace cs430WebApplication
 
 
 
-            string query = $"SELECT * FROM users WHERE email = '{email}' AND password= '{pass}';";
+            string query = $"SELECT * FROM Users WHERE email = '{email}' AND password= '{pass}';";
             
 
             try
@@ -119,7 +129,7 @@ namespace cs430WebApplication
 
                        
                         reader.Close();
-                        conn.Close();
+                      
                         return true;
 
                     }
@@ -168,18 +178,20 @@ namespace cs430WebApplication
 
         {
 
-            server = "us-cdbr-azure-east2-d.cloudapp.net";
+            server = "db4free.net";
             database = "cs430dp";
-            uid = "bde01a074310a7";
-            password = "2316fdf1";
+            uid = "mccorwin";
+            password = "corwin445";
+            port = "3307";
 
             string connString;
-            connString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={password};";
+            connString = $"SERVER={server};PORT={port};DATABASE={database};UID={uid};PASSWORD={password};";
             conn = new MySqlConnection(connString);
             using (conn)
             {
                 conn.Open();
                 Response.Write("Connected");
+                
             }
 
         }

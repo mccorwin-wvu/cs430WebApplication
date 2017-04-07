@@ -13,30 +13,30 @@ namespace cs430WebApplication {
     public partial class WebForm1 {
         
         /// <summary>
-        /// em control.
+        /// loginEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl em;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl loginEmail;
         
         /// <summary>
-        /// pass control.
+        /// loginPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword pass;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword loginPassword;
         
         /// <summary>
-        /// LogIn control.
+        /// loginButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button LogIn;
+        protected global::System.Web.UI.WebControls.Button loginButton;
     }
 }
