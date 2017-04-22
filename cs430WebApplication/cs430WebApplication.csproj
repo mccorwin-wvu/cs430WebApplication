@@ -126,7 +126,9 @@
     <Content Include="css\bootstrap.css.map" />
     <Content Include="css\bootstrap-theme.min.css.map" />
     <Content Include="Register.aspx" />
+    <Content Include="Main.css" />
     <Content Include="UserHomePage.aspx" />
+    <Content Include="CreateEvent.aspx" />
     <None Include="Properties\PublishProfiles\cs430WebApplication - Web Deploy.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -143,6 +145,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ServerCom.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -169,6 +172,13 @@
     </Compile>
     <Compile Include="UserHomePage.aspx.designer.cs">
       <DependentUpon>UserHomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateEvent.aspx.cs">
+      <DependentUpon>CreateEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateEvent.aspx.designer.cs">
+      <DependentUpon>CreateEvent.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

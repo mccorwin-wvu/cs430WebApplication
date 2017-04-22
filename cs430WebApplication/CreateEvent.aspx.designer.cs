@@ -10,78 +10,60 @@
 namespace cs430WebApplication {
     
     
-    public partial class WebForm3 {
+    public partial class WebForm4 {
         
         /// <summary>
-        /// form1 control.
+        /// eventName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText eventName;
         
         /// <summary>
-        /// Events control.
+        /// eventDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Events;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl eventDate;
         
         /// <summary>
-        /// matchedEvents control.
+        /// eventLocation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button matchedEvents;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText eventLocation;
         
         /// <summary>
-        /// CreateEvent control.
+        /// tags control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button CreateEvent;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText tags;
         
         /// <summary>
-        /// ChangePass control.
+        /// eventDes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ChangePass;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea eventDes;
         
         /// <summary>
-        /// SubmitTags control.
+        /// event_sub control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SubmitTags;
-        
-        /// <summary>
-        /// tagBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText tagBox;
-        
-        /// <summary>
-        /// helpTagBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl helpTagBox;
+        protected global::System.Web.UI.WebControls.Button event_sub;
     }
 }

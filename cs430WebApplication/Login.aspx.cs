@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using MySql.Data.MySqlClient;
-using System.Diagnostics;
+
 namespace cs430WebApplication
 {
     public partial class WebForm1 : System.Web.UI.Page
@@ -25,9 +25,13 @@ namespace cs430WebApplication
         private String first_name = "";
         private String last_name = "";
         private String user_email = "";
+        private String school = "";
         private String tags = "";
+        private int priv = -1;
 
         private MySqlConnection conn;
+
+
         protected void RegisterPage(object sender, EventArgs e)
         {
             Response.Redirect("Register.aspx");
@@ -48,6 +52,9 @@ namespace cs430WebApplication
                 Session["last_name"] = last_name;
                 Session["user_email"] = user_email;
                 Session["tags"] = tags;
+                Session["school"] = school;
+                Session["priv"] = priv;
+
 
                 conn.Close();
 
@@ -123,6 +130,8 @@ namespace cs430WebApplication
                         last_name = reader.GetString(3);
                         user_email = reader.GetString(1);
                         tags = reader.GetString(5);
+                        school = reader.GetString(6);
+                        priv = reader.GetInt32(7);
 
 
 

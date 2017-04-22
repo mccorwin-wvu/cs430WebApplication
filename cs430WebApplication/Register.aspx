@@ -4,143 +4,18 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="Main.css" rel="stylesheet" />
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
     <title></title>
 
 
-    <style>
-         h1#loginText {
-            color: gold;
-            padding: 0px,0,0px,0;
-            font-size: 70px;
-            text-align: center;
-        }
-
-         img#titleImg {
-            width: 120px;
-            height: 120px;
-        }
-
-        header {
-            width: auto;
-            height: 150px;
-        }
-        
-        div {
-            
-            align-content:center;
-            padding: 20px,20px,20px,20px;
-            margin-bottom: 25px;
-            margin-top: 25px;
-            
-        }
-        form {
-           
-            align-content: center;
-            text-align: center;
-            margin-bottom: 25px;
-            margin-top: 25px;
-        }
-
-        .inputs {
-            display:block;
-          
-            animation:ease-in;
-            border-style:double;
-            text-shadow: 2px 2px 20px #FAFA11;
-            border-color:gold;
-            font-size: 18px;
-            margin:auto;
-        }
-      
-
-        body {
-            background-image: url(http://wallpapercave.com/wp/0gjtD62.jpg);
-        }
-
-        label {
-            display:block;
-            color: #ffd800;
-        }
-
-        
-
-        .live-search-list {
-            
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-
-            display:block;
-          
-            animation:ease-in;
-            border-style:double;
-            text-shadow: 2px 2px 20px #FAFA11;
-            border-color:gold;
-            font-size: 18px;
-            margin:auto;
-           
-           
-            -webkit-border-radius: 5px;
-            -moz-border-radius: 5px;
-            border-radius: 5px;
-            font-family: 'Lato', sans-serif;
-            
-          
-            padding: 1em;
-            list-style-type: none;
-            background-color: black;
-            margin-left:350px;
-            margin-top: 0;
-            width:200px;
-            float:left;
-
-            position: absolute;
-            left: 100px;
-            top: 810px;
-
-            
-            color: #fff;
-        }
-
-
-
-        .live-search-box {
-            
-            display:block;
-            animation:ease-in;
-            border-style:double;
-            text-shadow: 2px 2px 20px #FAFA11;
-            border-color:gold;
-            font-size: 18px;
-            margin:auto;
-        }
-
-        .buttonLog {
-            width: 200px;
-            height: 45px;
-            font-size: medium;
-            color: blue;
-            background-color: gold;
-            border-color: blue;
-            
-        }
-
-        .live-search-list li {
-            color: #fff;
-            list-style: none;
-            padding: 0;
-            margin: 5px 0;
-        }
-
-    </style>
+   
 </head>
 <body>
     <header>
 
         <h1 id="loginText" style="width: auto">
-
+            
 
 
             <img id="titleImg" src="http://img.scout.com/sites/default/files/west_virginia_mountaineers.png" />Register </h1>
@@ -271,7 +146,8 @@
                     <label for="password">Password</label>
                
                     <input type="password" id="password" placeholder="Password" onchange="checkFilledPass(); buttonRdy();" runat="server" class="inputs">
-                    <span class="help-block" style="color: gold">Needs to be 6 characters long</span>
+                    
+                
                 
             </div>
 
@@ -307,12 +183,21 @@
                     <input type="text" id="tagBox" class="live-search-box" runat="server" placeholder="search here" />
                     <span class="help-block" style="color: gold">Enter Tags That interest you separated by commas, eg. Basketball,football,pizza</span>
                 
-                  <asp:Button type="submit" ID="Button1" runat="server" OnClick="Submit_Click" Text="Register" class="buttonLog" />
+                 
 
-                    
 
-                     
-                         <ul class="live-search-list" id="tagList">
+            </div>
+
+            <div>
+
+                 <asp:Button type="submit" ID="Button1" runat="server" OnClick="Submit_Click" Text="Register" class="buttonGold"  />
+
+            </div>
+
+
+
+   
+        <ul class="live-search-list" style="position: absolute;right: 300px; top: 760px;" id="tagList">
                         <li>aardvark</li>
                         <li>abacus</li>
                         <li>abbey</li>
@@ -4767,14 +4652,6 @@
 
                     </script>
 
-              
-
-
-
-            </div>
-
-   
-
 
         </form>
 
@@ -4788,7 +4665,9 @@
 
 
 
+    <footer>
 
+    </footer>
 
 
 
@@ -4796,6 +4675,8 @@
 
 
 </body>
+
+    
 <script>
     checkFilledFn();
     checkFilledLn();
