@@ -69,11 +69,16 @@ namespace cs430WebApplication
 
             helpTagBox.InnerText = "Current Tags: " + tagBox.Value;
 
+
+
             changeTags(user_id, tagBox.Value);
 
             
 
-            
+            Session["tags"] = tagBox.Value;
+
+
+
 
 
 
@@ -84,11 +89,28 @@ namespace cs430WebApplication
         protected void CreateEventPage(object sender, EventArgs e) {
 
             Session["user_id"] = user_id;
-            
-            
 
-            
-            Response.Redirect("CreateEvent.aspx");
+
+
+            Server.Transfer("CreateEvent.aspx");
+           
+
+
+
+
+
+        }
+
+
+        protected void ViewEvents(object sender, EventArgs e)
+        {
+
+
+
+
+
+
+            Server.Transfer("Events.aspx");
 
 
 
@@ -98,7 +120,26 @@ namespace cs430WebApplication
         }
 
 
-        
+        protected void MatchedEventPage(object sender, EventArgs e)
+        {
+
+
+            Session["tags"] = tags;
+
+
+
+
+            Server.Transfer("MatchedEvents.aspx");
+
+
+
+
+
+
+        }
+
+
+
 
 
 

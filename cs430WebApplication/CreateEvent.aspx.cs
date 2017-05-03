@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Globalization;
 using System.Web.UI.WebControls;
 using MySql.Data.MySqlClient;
 
@@ -34,9 +35,17 @@ namespace cs430WebApplication
 
             String date = eventDate.Value;
 
-                
+            String[] splitdt = date.Split('T');
 
-            submitEvent(eventName.Value, date, eventLocation.Value, tags.Value, eventDes.Value, user_id);
+            String[] newDate = splitdt[0].Split('-');
+
+            String finalDate = newDate[1] + "-" + newDate[2] + "-" + newDate[0];
+
+            String time = DateTime.ParseExact(splitdt[1], "HH:mm", CultureInfo.CurrentCulture).ToString("h:mm tt");
+
+
+
+            submitEvent(eventName.Value, finalDate, time, eventLocation.Value, tags.Value, eventDes.Value, user_id);
             
 
 
@@ -52,9 +61,9 @@ namespace cs430WebApplication
 
 
 
-        private bool submitEvent(string name, string dt, string location, string tags, string des, int user_id)
+        private bool submitEvent(string name, string dt, string time, string location, string tags, string des, int user_id)
         {
-            string query = $"INSERT INTO Events ( event_name, event_dt, event_location, event_tags, event_des, user_id) VALUES ('{name}','{dt}','{location}','{tags}','{des}','{user_id}');";
+            string query = $"INSERT INTO Events ( event_name, event_dt, event_time, event_location, event_tags, event_des, user_id) VALUES ('{name}','{dt}','{time}','{location}','{tags}','{des}','{user_id}');";
 
             try
             {

@@ -127,8 +127,11 @@
     <Content Include="css\bootstrap-theme.min.css.map" />
     <Content Include="Register.aspx" />
     <Content Include="Main.css" />
+    <Content Include="searchList.txt" />
     <Content Include="UserHomePage.aspx" />
     <Content Include="CreateEvent.aspx" />
+    <Content Include="Events.aspx" />
+    <Content Include="MatchedEvents.aspx" />
     <None Include="Properties\PublishProfiles\cs430WebApplication - Web Deploy.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -179,6 +182,20 @@
     </Compile>
     <Compile Include="CreateEvent.aspx.designer.cs">
       <DependentUpon>CreateEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Events.aspx.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Events.aspx.designer.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MatchedEvents.aspx.cs">
+      <DependentUpon>MatchedEvents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MatchedEvents.aspx.designer.cs">
+      <DependentUpon>MatchedEvents.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
