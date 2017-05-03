@@ -54,7 +54,7 @@
                
                  
                     <input type="text" id="tagBox" class="live-search-box" runat="server"/>
-                    <span class="help-block" id="helpTagBox" style="color: gold" runat="server">Enter New Tags </span>
+                    <span class="help-block" id="helpTagBox" style="color: blue" runat="server">Enter New Tags </span>
               
                  
               
